@@ -1,0 +1,12 @@
+{
+    "data_train": "gs://squirrel-core-public-data/gnn_bvp_solver/MagneticsRandomCurrentGenerator/norm_train_ma",
+    "data_val": "gs://squirrel-core-public-data/gnn_bvp_solver/MagneticsRandomCurrentGenerator/norm_val_ma",
+    "data_test": "gs://squirrel-core-public-data/gnn_bvp_solver/MagneticsRandomCurrentGenerator/norm_test_shape",
+    "processor": "gcnch3w",
+    "epochs": 150, 
+    "dim": [11, 3],
+    "tags": ["shape_gen", "magnetostatics"],
+    "batch_size": 32,
+    "augmentation": ["mesh_aug"],
+    "remove_pos": true
+}

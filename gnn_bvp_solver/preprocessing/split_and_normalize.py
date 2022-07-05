@@ -201,24 +201,24 @@ def main_scale(in_url: str, out_url: str) -> None:
     print("scale and store")
 
     print("train")
-    scale_and_store("raw_train1", "norm_train1", range_dict, in_url, out_url)
-    scale_and_store("raw_train2", "norm_train2", range_dict, in_url, out_url)
+    scale_and_store("raw_train1", "norm_train_no_ma", range_dict, in_url, out_url)
+    scale_and_store("raw_train2", "norm_train_ma", range_dict, in_url, out_url)
 
     print("val")
-    scale_and_store("raw_val1", "norm_val1", range_dict, in_url, out_url)
-    scale_and_store("raw_val2", "norm_val2", range_dict, in_url, out_url)
+    scale_and_store("raw_val1", "norm_val_no_ma", range_dict, in_url, out_url)
+    scale_and_store("raw_val2", "norm_val_ma", range_dict, in_url, out_url)
 
     print("test1")
-    scale_and_store("raw_test1", "norm_test1", range_dict, in_url, out_url)
+    scale_and_store("raw_test1", "norm_test_sup", range_dict, in_url, out_url)
 
     print("test2")
-    scale_and_store("raw_test2", "norm_test2", range_dict, in_url, out_url)
+    scale_and_store("raw_test2", "norm_test_shape", range_dict, in_url, out_url)
 
 
 def process(generator_key: str) -> None:
     """Process data from a single fem generator"""
     base_url_gs = f"gs://squirrel-core-public-data/gnn_bvp_solver/{generator_key}"
-    base_url = f"data/{generator_key}"
+    base_url = f"data/{generator_key}"  # store intermediate results locally
 
     main(generator_key, base_url)
     main_scale(base_url, base_url_gs)
