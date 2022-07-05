@@ -1,5 +1,4 @@
 from typing import List
-from dotenv import load_dotenv
 from pytorch_lightning.loggers import WandbLogger
 from pytorch_lightning.callbacks.model_checkpoint import ModelCheckpoint
 from datetime import datetime
@@ -50,9 +49,6 @@ class FEMTraining:
         self.data_module = self.load_msgpack(data_dir_train, data_dir_val, data_dir_test, batch_size_train, dry_run)
 
         if init_wandb and not self.profiling:
-            parent_dir = Path(__file__).parent.parent.parent.resolve()
-            load_dotenv(f"{parent_dir}/wandb.env", override=True)
-
             if tags is None:
                 tags = []
 
@@ -139,7 +135,7 @@ class FEMTraining:
         if not self.profiling:
             wandb.finish()
 
-    def test(self, artifact_reference: str, cuda: bool = True) -> None:
+    def test(self, artifact_reference: str, cuda: bool = True, project: str = None) -> None:
         """Download model artifact from wandb and test, which requires still to copy the artifact name manually.
 
         Args:
@@ -148,7 +144,11 @@ class FEMTraining:
         """
         gpus = 1 if cuda else 0
 
-        wandb.init(project="fem-end-to-end")
+        if project is not None:
+            wandb.init(project=project)
+        else:
+            wandb.init()        
+
         wandb_logger = WandbLogger(name="gnn_bvp_logs", version=datetime.today().strftime("%Y-%m-%d"))
 
         artifact = wandb.use_artifact(artifact_reference, type="model")

@@ -10,7 +10,7 @@ def create_training(config: Dict, dry_run: bool, profiling: bool, download_data:
         config["data_train"],
         config["data_val"],
         config["data_test"],
-        project=config["project"],
+        project="gnn_bvp_solver",
         tags=[config["processor"], *config["tags"]],
         dry_run=dry_run,
         batch_size_train=config["batch_size"],
@@ -34,7 +34,7 @@ def train(training: FEMTraining, config: Dict, cuda: bool) -> None:
 
 def test(training: FEMTraining, artifact: str, cuda: bool) -> None:
     """Call test on trainer"""
-    training.test(artifact, cuda=cuda)
+    training.test(artifact, cuda=cuda, project="gnn_bvp_solver")
 
 
 def test_vis(training: FEMTraining, artifact: str, cuda: bool, failure: bool = False) -> None:
@@ -50,8 +50,8 @@ if __name__ == "__main__":
     parser.add_argument("--artifact", default="")
     parser.add_argument("--no-gpu", dest="gpu", action="store_false")
     parser.add_argument("--profiling", dest="profiling", action="store_true")
-    parser.add_argument("--use-remote", dest="download_data", action="store_false")
-    parser.set_defaults(gpu=True, profiling=False, download_data=True)
+    parser.add_argument("--download-data", dest="download_data", action="store_true")
+    parser.set_defaults(gpu=True, profiling=False, download_data=False)
 
     args = parser.parse_args()
     print(args)
