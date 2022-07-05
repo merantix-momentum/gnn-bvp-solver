@@ -26,3 +26,15 @@ An example command would be:
 ```
 python -m gnn_bvp_solver.app --task test --artifact model-aer8oj02:v1 --config configs/task_shape/es_ma.json --no-gpu
 ```
+
+## Cite our work
+Please cite the [paper](https://arxiv.org/abs/2206.14092) if you use this code in your own work. 
+
+```
+@article{lotzsch2022learning,
+  title={Learning the Solution Operator of Boundary Value Problems using Graph Neural Networks},
+  author={L{\"o}tzsch, Winfried and Ohler, Simon and Otterbach, Johannes S},
+  journal={arXiv preprint arXiv:2206.14092},
+  year={2022}
+}
+```
