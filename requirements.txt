@@ -1,0 +1,13 @@
+wandb
+squirrel-datasets-core
+matplotlib
+numpy
+torch==1.11.0
+pytorch-lightning
+torchmetrics
+
+# replace this line with your pytorch version
+--find-links https://data.pyg.org/whl/torch-1.11.0+cpu.html
+torch-geometric
+torch-sparse
+torch-scatter
