@@ -27,6 +27,13 @@ An example command would be:
 python -m gnn_bvp_solver.app --task test --artifact model-aer8oj02:v1 --config configs/task_shape/es_ma.json --no-gpu
 ```
 
+## Paper
+Please find the full details for our experiments in the [paper](https://arxiv.org/abs/2206.14092).
+We published our work at the [AI for Science workshop at ICML 2022](https://openreview.net/forum?id=4vx9FQA7wiC).
+
+## License
+This software is licensed under the [MIT License](LICENSE).
+
 ## Cite our work
 Please cite the [paper](https://arxiv.org/abs/2206.14092) if you use this code in your own work. 
 
