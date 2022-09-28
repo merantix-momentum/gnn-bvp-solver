@@ -1,7 +1,7 @@
 # Source code for paper "Learning the Solution Operator of Boundary Value Problems using Graph Neural Networks".
 
 ## Using the data
-The data is stored publicly in google buckets in `requester-pays` mode. To access the data and train your models, you need to [include a billing project](https://cloud.google.com/storage/docs/using-requester-pays#using).
+The data is stored publicly in google buckets in `requester-pays` mode. To access the data and train your models, you need to [include a billing project](https://cloud.google.com/storage/docs/using-requester-pays#using). The raw data can also be found on [huggingface](https://huggingface.co/datasets/winfried/gnn_bvp_solver/tree/main). You would need to adapt the dataset paths in the config files after downloading and afterwards you would be able to run the experiments without accessing the cloud.
 
 ## Use weights & biases:
 We use weights & biases for logging and experiment tracking. You can create your free account [here](https://wandb.ai/).
