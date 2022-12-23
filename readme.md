@@ -14,7 +14,7 @@ In the config folder, training scripts are provided for all experiments in the p
 An example command would be:
 
 ```
-python -m gnn_bvp_solver.app --config configs/task_shape/es_ma.json --dry_run --no-gpu 
+python -m gnn_bvp_solver.app --config configs/task_shape/es_ma.json --no-gpu 
 ```
 
 ## Test a model:
