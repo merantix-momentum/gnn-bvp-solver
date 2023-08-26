@@ -43,7 +43,7 @@ Please cite the [paper](https://arxiv.org/abs/2206.14092) if you use this code i
 @article{lotzsch2022learning,
   title={Learning the Solution Operator of Boundary Value Problems using Graph Neural Networks},
   author={L{\"o}tzsch, Winfried and Ohler, Simon and Otterbach, Johannes S},
-  journal={arXiv preprint arXiv:2206.14092},
+  journal={ICML 2022 2nd AI for Science Workshop},
   year={2022}
 }
 ```
