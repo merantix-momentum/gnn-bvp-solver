@@ -2,7 +2,7 @@ wandb
 squirrel-datasets-core
 matplotlib
 numpy
-torch==1.11.0
+torch==2.2.0
 pytorch-lightning
 torchmetrics
 
